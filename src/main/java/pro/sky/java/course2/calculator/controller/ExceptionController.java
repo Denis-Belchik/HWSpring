@@ -11,7 +11,11 @@ public class ExceptionController {
 
     @GetMapping("/exception")
     public boolean checkLogPass(@RequestParam String login, @RequestParam String password, @RequestParam String conformPassword) {
-        return check(login, password, conformPassword);
+        try {
+            return check(login, password, conformPassword);
+        }catch (WrongLoginException | WrongPasswordException e){
+            return false;
+        }
     }
 
     public static boolean check(String login, String password, String conformPassword) {
