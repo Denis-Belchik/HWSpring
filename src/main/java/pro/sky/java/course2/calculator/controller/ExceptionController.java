@@ -18,7 +18,7 @@ public class ExceptionController {
         }
     }
 
-    public static boolean check(String login, String password, String conformPassword) {
+    private static boolean check(String login, String password, String conformPassword) {
         if (!(isCorrectLengthLogin(login) && isValid(login)))
             throw new WrongLoginException("Некорректный логин");
 
