@@ -22,24 +22,24 @@ public class CalculatorController {
     }
 
     @GetMapping("/plus")
-    public String showPlus(@RequestParam int num1, @RequestParam int num2) {
+    public String showPlus(@RequestParam Integer num1, @RequestParam Integer num2) {
         return num1 + " + " + num2 + " = " + calculatorService.plus(num1, num2);
     }
 
     @GetMapping("/minus")
-    public String showMinus(@RequestParam int num1, @RequestParam int num2) {
+    public String showMinus(@RequestParam Integer num1, @RequestParam Integer num2) {
         return num1 + " - " + num2 + " = " + calculatorService.minus(num1, num2);
     }
 
     @GetMapping("/multiply")
-    public String showMultiply(@RequestParam int num1, @RequestParam int num2) {
+    public String showMultiply(@RequestParam Integer num1, @RequestParam Integer num2) {
         return num1 + " * " + num2 + " = " + calculatorService.multiply(num1, num2);
     }
 
     @GetMapping("/divide")
-    public String showDivide(@RequestParam int num1, @RequestParam int num2) {
-        if (num2 == 0)
-            return "Деление на 0";
+    public String showDivide(@RequestParam Integer num1, @RequestParam Integer num2) {
+//        if (num2 == 0)
+//            return "Деление на 0";
         return num1 + " / " + num2 + " = " + calculatorService.divide(num1, num2);
     }
 
